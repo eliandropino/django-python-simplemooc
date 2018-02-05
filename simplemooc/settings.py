@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core'
+    'core',
+    'courses'
 ]
 
 MIDDLEWARE = [
@@ -75,9 +76,18 @@ WSGI_APPLICATION = 'simplemooc.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
+    #'default': {
+     #   'ENGINE': 'django.db.backends.sqlite3',
+      #  'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    #}
+
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'simplemooc',
+        'USER': 'eliandro',
+        'PASSWORD': '276488',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
@@ -119,3 +129,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
